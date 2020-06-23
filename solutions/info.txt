@@ -1,1 +1,1 @@
-This directory contains sample solutions for any gieven previous quizes and assignments. 
+This directory contains sample solutions for any given previous quizes and assignments. 
