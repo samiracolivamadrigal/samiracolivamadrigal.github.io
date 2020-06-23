@@ -1,0 +1,1 @@
+This directory contains sample solutions for any gieven previous quizes and assignments. 
