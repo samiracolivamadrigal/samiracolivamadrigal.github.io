@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -255,16 +256,35 @@
         
     </main>
     
-  <h3 id="fabric-of-time" class="section-heading" style="text-align: center;">The Fabric of Time ...</h3>
-  <div class="gallery-container" style="margin-bottom: 80px;">
-      <div style="max-width: 640px; width: 100%;">
-          
-          <iframe width="100%" height="360" src="https://www.youtube.com/embed/jjDgVY18D2I?si=GDHnGVF43soN0tLQ"
-              title="Volkan Kuday - In Another Life" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-      </div>
-  </div>
   
+  <!-- Music Player: Experience by Ludovico Einaudi -->
+  <iframe id="yt-player" width="0" height="0"
+          src="https://www.youtube.com/embed/jjDgVY18D2I?autoplay=1&loop=1&playlist=jjDgVY18D2I&enablejsapi=1"
+          style="display:none;"
+          frameborder="0"
+          allow="autoplay; encrypted-media">
+  </iframe>
+
+  <button id="music-control" onclick="toggleMusic()" style="position: fixed; top: 20px; right: 20px; z-index: 9999; background: #000; color: #d4af37; padding: 10px 20px; border: 1px solid #d4af37; cursor: pointer; text-transform: uppercase; font-size: 0.7em;">
+      Music: Start
+  </button>
+
+  <script>
+      function toggleMusic() {
+          var player = document.getElementById('yt-player');
+          var btn = document.getElementById('music-control');
+          
+          if (player.style.display === 'none') {
+              player.style.display = 'block';
+              // Force the iframe to reload/start
+              player.src = player.src;
+              btn.innerText = 'Music: Playing';
+          } else {
+              player.style.display = 'none';
+              btn.innerText = 'Music: Stopped';
+          }
+      }
+  </script>
   
     <footer>
         <p>&copy; 2026 Samira C. Oliva Madrigal & Cryptologia, LLC</p>
@@ -273,3 +293,4 @@
 
 </body>
 </html>
+
