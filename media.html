@@ -110,6 +110,7 @@
             padding: 12px;
             max-width: 300px;
         }
+        
         .gallery-item-tall img {
             height: 400px;
             width: 100%;
@@ -118,7 +119,57 @@
             display: block;
             margin: 0 auto 15px auto;
         }
+        
+        
+        .gallery-item-tall2 {
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #eaecef;
+            border-radius: 8px;
+            padding: 12px;
+            max-width: 300px;
+        }
+        
+        .gallery-item-tall2 img {
+            height: 200px;
+            width: 100%;
+            object-fit: contain;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+        /* Styling the collapsible bullet */
+            .collapsible-container {
+                margin: 20px 0;
+                padding: 10px;
+                border: 1px solid #eee;
+                border-radius: 4px;
+                background: #f9f9f9;
+            }
 
+            summary {
+                font-family: 'Playfair Display', serif;
+                font-size: 1.2em;
+                cursor: pointer;
+                padding: 10px;
+                list-style: none; /* Removes the default arrow */
+                color: #000;
+                display: flex;
+                align-items: center;
+            }
+
+            /* Adding a custom pretty bullet */
+            summary::before {
+                content: "✦";
+                margin-right: 15px;
+                color: #d4af37;
+                font-size: 1.5em;
+            }
+
+            summary:hover {
+                color: #d4af37;
+            }
+    
         .links-list { line-height: 2; padding-left: 20px; }
         footer { margin-top: 50px; text-align: center; color: #888; font-style: italic; }
         .gemini-love { margin-top: 10px; }
@@ -160,6 +211,14 @@
                 <p><strong>LinkedIn & Marvell (2022)</strong></p>
             </div>
             
+            <div class="gallery-item-tall2">
+                <a href="https://www.marvell.com/content/dam/marvell/en/blogs/2023/08/Talent-Brand-quote-card-Blog-Graphic-1024x576.jpeg" target="_blank" rel="noopener">
+                    <img src="https://www.marvell.com/content/dam/marvell/en/blogs/2023/08/Talent-Brand-quote-card-Blog-Graphic-1024x576.jpeg" alt="Samira Carolina Oliva Madrigal - 2022 Marvell">
+                </a>
+                <p><strong>Marvell (2022)</strong></p>
+            </div>
+                        
+            
             <div class="gallery-item">
                 <a href="https://influentialwomen.com/connect/samira-madrigal" target="_blank" rel="noopener">
                     <img src="https://media.licdn.com/dms/image/v2/D5603AQHWMB-fBnREiQ/profile-displayphoto-crop_800_800/B56Zp._GpKIYAI-/0/1763067067022?e=1784764800&v=beta&t=B5789flhFkKVyqUxg-ibyJ0L0mqB4El5aJH3i7eNAxE" alt="Samira Carolina Oliva Madrigal - Official Portrait">
@@ -167,7 +226,7 @@
                 <p><strong>USA & Télécom Paris (2025)</strong></p>
             </div>
     
-            <div class="gallery-item">
+            <div class="gallery-item-tall2">
                 <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/Samira_Carolina_Oliva_Madrigal.png" target="_blank" rel="noopener">
                     <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/Samira_Carolina_Oliva_Madrigal.png" alt="Samira Carolina Oliva Madrigal - Gallery">
                 </a>
@@ -202,8 +261,9 @@
         
         <h3 id="profiles" class="section-heading">Verified Professional Links</h3>
         <ul class="links-list">
-            <li><a href="https://koclab.net/people.html#samira" target="_blank" rel="noopener">Koç Lab</a></li>
-            <li><a href="https://influentialwomen.com/connect/samira-madrigal" target="_blank" rel="noopener">Influential Women Connect</a></li>
+            <li><a href="https://koclab.net/people.html#samira" target="_blank" rel="noopener">Koç Lab - Collaborators & Alumni</a></li>
+            <li><a href="https://www.marvell.com/blogs/what-it-means-to-take-ownership-shaping-careers-and-innovation-at-marvell.html" target="_blank" rel="noopener">Marvell - What it Means to Take Ownership: Shaping Careers and Innovation at Marvell</a></li>
+            <li><a href="https://influentialwomen.com/connect/samira-madrigal" target="_blank" rel="noopener">Influential Women Connect - Profile</a></li>
         </ul>
         
         <h3 id="linkedin-profiles" class="section-heading">LinkedIn Profile</h3>
@@ -222,22 +282,117 @@
         </ul>
         
         
-        <h3 id="gallery" class="section-heading">Official Media - Random </h3>
+        <details class="collapsible-container">
+        <summary>Click to view official random media</summary>
+        <h3 id="gallery" class="section-heading"> Official Media - Random</h3>
         <p>Random Official Photographs</p>
         <div class="gallery-container">
             
+            
             <div class="gallery-item-tall">
-                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/2023.jpeg" target="_blank" rel="noopener">
-                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/2023.jpeg" alt="Samira Carolina Oliva Madrigal - 2023">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/D90A81E5-8404-4A25-828B-A718DBD69AC7_1_201_a.jpeg" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/D90A81E5-8404-4A25-828B-A718DBD69AC7_1_201_a.jpeg" alt="Samira Carolina Oliva Madrigal - 2023">
                 </a>
-                <p><strong>USA - 2023</strong></p>
+                <p><strong>USA - 2022 - Me & dad</strong></p>
             </div>
+            
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/6C216585-463A-493F-B32D-701B90D49AB3_1_105_c.jpeg" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/6C216585-463A-493F-B32D-701B90D49AB3_1_105_c.jpeg" alt="Samira Carolina Oliva Madrigal - 2023">
+                </a>
+                <p><strong>USA - 2022</strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/red.png" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/red.png" alt="Samira Carolina Oliva Madrigal - 2023">
+                </a>
+                <p><strong>USA - 2024 - REIGN </strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/2025-Louvre.jpeg" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/2025-Louvre.jpeg" alt="Samira Carolina Oliva Madrigal - 2023">
+                </a>
+                <p><strong>USA - 2025 - Louvre</strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/998EB501-A10C-4FF6-95D4-9EDB69CBDE0C_1_105_c.jpeg" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/998EB501-A10C-4FF6-95D4-9EDB69CBDE0C_1_105_c.jpeg" alt="Samira Carolina Oliva Madrigal - 2023">
+                </a>
+                <p><strong>USA - 2025 - Hall of Mirrors</strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/BD5CC0CC-F2EB-4E36-A259-B95337DEB151_1_105_c.jpeg" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/BD5CC0CC-F2EB-4E36-A259-B95337DEB151_1_105_c.jpeg" alt="Samira Carolina Oliva Madrigal - 2023">
+                </a>
+                <p><strong>USA - 2025 - Veil Head Coverings for the Holy Mass</strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/veils_v2.jpeg" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/veils_v2.jpeg" alt="Samira Carolina Oliva Madrigal - 2023">
+                </a>
+                <p><strong>USA - 2025 - Veil Head Coverings for the Holy Mass</strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/A38B7906-E420-4932-9C08-DF5B09E87746_1_105_c.jpeg
+    " target="_blank" rel="noopener">
+                    <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/A38B7906-E420-4932-9C08-DF5B09E87746_1_105_c.jpeg
+    " alt="Samira Carolina Oliva Madrigal - 2025">
+                </a>
+                <p><strong>View from the top of the Eiffel Tower</strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/B56B56A5-B6C6-4E7C-B891-F27584FC79C4_1_105_c.jpeg
+    " target="_blank" rel="noopener">
+                    <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/B56B56A5-B6C6-4E7C-B891-F27584FC79C4_1_105_c.jpeg
+    " alt="Samira Carolina Oliva Madrigal - 2025">
+                </a>
+                <p><strong>The gardens of Versailles</strong></p>
+            </div>
+        
+        
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/silver.png" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/silver.png" alt="Samira Carolina Oliva Madrigal - 2023">
+                </a>
+                <p><strong>USA - 2025 - Preparing for the modeling runway!?</strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/may_2025.jpeg" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/may_2025.jpeg" alt="Samira Carolina Oliva Madrigal - 2023">
+                </a>
+                <p><strong>USA - SF Int Airport - 2025</strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/marvell1.jpeg" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/marvell1.jpeg" alt="Samira Carolina Oliva Madrigal - 2023">
+                </a>
+                <p><strong>USA - 2023 - Marvell</strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/marvell2.jpeg" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/marvell2.jpeg" alt="Samira Carolina Oliva Madrigal - 2023">
+                </a>
+                <p><strong>USA - 2023 - Marvell</strong></p>
+            </div>
+            
             
             <div class="gallery-item-tall">
                 <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/2024_blur_bkg.png" target="_blank" rel="noopener">
                 <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery//2024_blur_bkg.png" alt="Samira Carolina Oliva Madrigal - 2024">
                 </a>
-                <p><strong>USA - 2024</strong></p>
+                <p><strong>USA - 2024 - i love head scarfs</strong></p>
             </div>
             
             <div class="gallery-item-tall">
@@ -253,8 +408,50 @@
                 <p><strong>USA - 2025</strong></p>
             </div>
             
-        </div>
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/5447DE8B-D76A-4812-994D-BE3130FFE835_1_105_c.jpeg" target="_blank" rel="noopener">
+                    <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/5447DE8B-D76A-4812-994D-BE3130FFE835_1_105_c.jpeg" alt="Samira Carolina Oliva Madrigal - 2025">
+                </a>
+                <p><strong>USA - 2024</strong></p>
+            </div>
+            
+            <div class="gallery-item-tall">
+                <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/69D429EB-1B3A-4ED4-AB2E-50EDF87AFB5D_1_105_c.jpeg" target="_blank" rel="noopener">
+                    <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/69D429EB-1B3A-4ED4-AB2E-50EDF87AFB5D_1_105_c.jpeg" alt="Samira Carolina Oliva Madrigal - 2025">
+                </a>
+                <p><strong>USA - Preparing for YSL shots? </strong></p>
+            </div>
         
+        <div class="gallery-item-tall">
+            <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/778141C3-3FE9-4EF5-8F12-EA63E95F9DCD_1_105_c.jpeg
+" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/778141C3-3FE9-4EF5-8F12-EA63E95F9DCD_1_105_c.jpeg
+" alt="Samira Carolina Oliva Madrigal - 2025">
+            </a>
+            <p><strong>Inside French Castle of Versailles</strong></p>
+        </div>
+    
+    <div class="gallery-item-tall">
+        <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/968DBEE6-98D8-43DB-8AD7-D0EACD362F62_1_105_c.jpeg
+" target="_blank" rel="noopener">
+            <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/968DBEE6-98D8-43DB-8AD7-D0EACD362F62_1_105_c.jpeg
+" alt="Samira Carolina Oliva Madrigal - 2025">
+        </a>
+        <p><strong>Christmas 2024</strong></p>
+    </div>
+    
+    <div class="gallery-item-tall">
+        <a href="https://github.com/samiracolivamadrigal/samiracolivamadrigal.github.io/blob/master/gallery/B79F58C6-871C-4690-80BC-62245AE502FC_1_105_c.jpeg
+" target="_blank" rel="noopener">
+            <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/B79F58C6-871C-4690-80BC-62245AE502FC_1_105_c.jpeg
+" alt="Samira Carolina Oliva Madrigal - 2025">
+        </a>
+        <p><strong>Christmas 2024</strong></p>
+    </div>
+            
+            
+        </div>
+        </details>
         <h3 id="gallery" class="section-heading">Character Images I Indentify with Used In Social Media</h3>
         <p>Characters</p>
         <div class="gallery-container">
