@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samira Carolina Oliva Madrigal | Independent Fashion Talent & Strategy</title>
+    <style>
+        :root {
+            --bg-color: #0B0B0B;
+            --text-light: #FAFAFA;
+            --text-muted: #8E8E93;
+            --accent: #D4AF37; /* Subtle Luxury Gold */
+            --font-serif: 'Playfair Display', 'Didot', serif;
+            --font-sans: 'Inter', 'Helvetica Neue', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header / Navigation */
+        header {
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+        .logo { font-family: var(--font-serif); font-size: 1.5rem; letter-spacing: 2px; }
+        .logo a { color: var(--text-light); text-decoration: none; }
+        .nav-links a { color: var(--accent); text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
+        .nav-links a:hover { color: var(--text-light); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 6rem 2rem; }
+        
+        /* Profile Header */
+        .profile-header { text-align: center; margin-bottom: 5rem; }
+        .profile-header h1 { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 300; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .profile-header .subtitle { font-size: 1rem; color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-weight: 400; }
+        .representation-tag { margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted); font-style: italic; letter-spacing: 0.5px; }
+
+        /* Two Column Layout: Stats & Background */
+        .layout-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; margin-bottom: 5rem; }
+        
+        /* Stats Sidebar */
+        .stats-sidebar { background-color: #111; padding: 3rem 2.5rem; border: 1px solid #222; height: fit-content; }
+        .stats-sidebar h2 { font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 2rem; letter-spacing: 1px; border-bottom: 1px solid #222; padding-bottom: 0.5rem; }
+        
+        .stat-row { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #222; font-size: 0.95rem; }
+        .stat-row:last-child { border-bottom: none; }
+        .stat-label { color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        .stat-value { color: var(--text-light); font-weight: 500; }
+
+        /* Background Content */
+        .content-main h2 { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem; color: var(--accent); font-weight: 300; }
+        .content-main p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; text-align: justify; }
+        
+        .highlight-quote { border-left: 2px solid var(--accent); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--text-light); font-size: 1.1rem; }
+
+        /* Editorial Placement Grid (Placeholder for Images) */
+        .visual-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+        .visual-placeholder { background: #151515; border: 1px dashed #333; height: 350px; display: flex; align-items: center; justify-content: center; color: #444; font-family: var(--font-serif); font-style: italic; transition: 0.3s; }
+        .visual-placeholder:hover { border-color: var(--accent); color: var(--text-muted); }
+
+        /* CTA / Booking Footer */
+        .booking-section { text-align: center; padding: 6rem 2rem; border-top: 1px solid #222; background: #111; margin-top: 4rem; }
+        .booking-section h3 { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1rem; }
+        .booking-btn { display: inline-block; padding: 1rem 2.5rem; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: 0.3s; margin-top: 1rem; }
+        .booking-btn:hover { background-color: var(--accent); color: var(--bg-color); }
+
+        @media (max-width: 768px) {
+            header { padding: 2rem; }
+            .container { padding: 3rem 1.5rem; }
+            .layout-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .profile-header h1 { font-size: 2.5rem; }
+            .visual-grid { grid-template-columns: 1fr; }
+            .visual-placeholder { height: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html">Samira Carolina Oliva Madrigal</a></div>
+        <div class="nav-links">
+            <a href="atelier.html">← Return to Atelier</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <h1>Samira Carolina Oliva Madrigal</h1>
+            <div class="subtitle">Independent Fashion Talent & Strategic Technologist</div>
+            <div class="representation-tag">Direct Bookings Only • Unrepresented & Self-Managed</div>
+        </div>
+
+        <!-- Main Grid Layout -->
+        <div class="layout-grid">
+            
+            <!-- Statistics Sidebar -->
+            <aside class="stats-sidebar">
+                <h2>Statistics</h2>
+                <div class="stat-row">
+                    <span class="stat-label">Height</span>
+                    <span class="stat-value">5' 4" / 163 cm</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Weight</span>
+                    <span class="stat-value">112 lbs / 50.8023</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Skin</span>
+                    <span class="stat-value">Fair Olive</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Bust</span>
+                    <span class="stat-value">33" / 83 cm</span>
+                    <span class="stat-value">33" / 83 cm</span>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-label">Waist</span>
+                    <span class="stat-value">26" / 66 cm</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Hips</span>
+                    <span class="stat-value">36" / 91 cm</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Eyes</span>
+                    <span class="stat-value">Brown</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Hair</span>
+                    <span class="stat-value">Dark Brown</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Shoes</span>
+                    <span class="stat-value">6.5 US / 37 EU</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Languages</span>
+                    <span class="stat-value">ES / IT / EN</span>
+                </div>
+            </aside>
+
+            <!-- Background & Philosophy Text -->
+            <main class="content-main">
+                <h2>The Analytical Silhouette</h2>
+                <p>Operating entirely as an independent talent, I manage my modeling portfolio exclusively under my own name. Free from traditional agency constraints, this choice mirrors my trajectory across advanced technological spaces—defined by structural autonomy, intellectual precision, and intentional creative choices.</p>
+                
+                <p>My editorial perspective is deeply shaped by an immersive study of historical fashion frameworks, particularly the structural geometry and gender-defying silhouettes of Yves Saint Laurent. I look at clothing not merely as surface adornment, but as architectural armor that interacts fluidly with space, movement, and light.</p>
+                
+                <div class="highlight-quote">
+                    "Fashion is an engineering of the body, and modeling is the performance of that geometry."
+                </div>
+
+                <p>With complete fluency in Spanish, Italian, and English, I offer luxury fashion houses and creative directors an articulate, globally versatile presence. This linguistic agility ensures collaboration in international sets and heritage design spaces—seamlessly bridging the gap between artistic expression, high-fashion storytelling, and complex technical environments.</p>
+                
+                <p>The graceful physique of an elite athlete. Femmenine, strong, and graceful. Seamless six-pack, no bulk. </p>
+            </main>
+
+        </div>
+
+        <!-- Editorial Placeholder Blocks -->
+        <h2 style="font-family: var(--font-serif); font-weight: 300; font-size: 1.8rem; margin-bottom: 1.5rem; letter-spacing: 1px;">Editorial Lookbook</h2>
+        <div class="visual-grid">
+            <!-- <div class="visual-placeholder">[ Editorial / Silhouette Portrait ]</div> -->
+            <img class="visual-placeholder" src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/modeling/vogue_norway_edit.png">
+            <img class="visual-placeholder" src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/modeling/ysl_edit1.png">
+            <img class="visual-placeholder" src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/modeling/ysl_edit2.png">
+        </div>
+
+    </div>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <h3>Direct Engagements</h3>
+        <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 1.5rem auto; font-size: 0.95rem;">For direct bookings, editorial commissions, lookbooks, or high-fashion brand alignments requiring an analytical, international perspective.</p>
+        <a href="mailto:scolivamadrigal@gmail.com" class="booking-btn">Request Portfolio / Inquire</a>
+    </section>
+
+</body>
+</html>
