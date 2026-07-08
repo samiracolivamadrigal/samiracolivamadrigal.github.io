@@ -33,8 +33,8 @@
         }
         .logo { font-family: var(--font-serif); font-size: 1.5rem; letter-spacing: 2px; }
         .lang-tags { display: flex; align-items: center; gap: 15px; }
-        .lang-tags span { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; }
-        .lang-tags span:hover { color: var(--text-light); }
+        .lang-tags span, .lang-tags a { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; text-decoration: none; }
+        .lang-tags span:hover, .lang-tags a:hover { color: var(--text-light); }
 
         /* Hero Section */
         .hero {
@@ -65,8 +65,18 @@
         }
         .card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .card h3 { font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 1rem; }
+        .card ul { list-style: none; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .card ul li { margin-bottom: 0.5rem; }
+        .card ul li a { color: var(--text-muted); text-decoration: none; transition: 0.3s; }
+        .card ul li a:hover { color: var(--accent); }
         .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; text-align: justify; }
         .tech-stack { font-family: monospace; font-size: 0.8rem; color: var(--accent); }
+
+        /* Lookbook Section */
+        .lookbook-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+        .lookbook-item { overflow: hidden; border: 1px solid #222; position: relative; }
+        .lookbook-item img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; }
+        .lookbook-item:hover img { transform: scale(1.05); }
 
         /* Call to Action */
         .cta-section { text-align: center; padding: 8rem 4rem; background-color: #111; }
@@ -78,12 +88,29 @@
         }
         .btn:hover { background-color: var(--text-light); color: var(--bg-color); }
 
+        /* Footer Section */
+        footer {
+            padding: 2rem 4rem;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+        footer hr {
+            border: 0;
+            border-top: 1px solid var(--accent);
+            margin-bottom: 1rem;
+        }
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
         @media (max-width: 768px) {
-            header, .hero, .section { padding: 2rem; }
+            header, .hero, .section, footer { padding: 2rem; }
             header { flex-direction: column; gap: 1rem; text-align: center; }
             .hero { flex-direction: column; text-align: center; justify-content: center; }
             .hero-text h1 { font-size: 2.5rem; }
             .hero-text p { margin: 0 auto 2rem auto; }
+            .lang-tags { flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
@@ -92,18 +119,17 @@
     <header>
         <div class="logo">Samira Carolina Oliva Madrigal & Cryptologia, LLC</div>
         <div class="lang-tags">
-            <a href="/modeling.html" style="color: #FFB6C1; text-decoration: none; font-size: 0.85rem; letter-spacing: 1px; font-weight: 500; margin-right: 5px;">MODELING</a>
+            <a href="/modeling.html" data-key="nav-modeling" style="color: #FFB6C1;">MODELING</a>
             <span onclick="switchLanguage('fr')">FRANÇAIS</span>
             <span onclick="switchLanguage('it')">ITALIANO</span>
             <span onclick="switchLanguage('en')">ENGLISH</span>
-            <a href="/index.html" style="color: #FFA500; text-decoration: none; font-size: 0.85rem; letter-spacing: 1px; font-weight: 500; margin-right: 5px;">HOME</a>
-
+            <a href="/index.html" data-key="nav-home" style="color: #FFA500;">HOME</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-text">
-            <h1 data-key="hero-title">Securing the Future of <span>Haute Couture</span> through Advanced Cryptology.</h1>
+            <h1 data-key="hero-title-a">Securing the Future of <span>Haute Couture</span> through Advanced Cryptology, and </h1> <h1 data-key="hero-title-b" style="color: #FFB6C1; margin-top: -1rem;">Samira's Maison & Atelier.</h1>
             <p data-key="hero-desc">Bridging the meticulous technical precision of mathematical defense with the visionary heritage of luxury fashion houses.</p>
             <a href="#vision" class="btn" data-key="hero-btn">Explore the Vision</a>
         </div>
@@ -128,19 +154,11 @@
             </div>
             <div class="card">
                 <h3 data-key="agile-title">Linguistic & Cultural Agility</h3>
-                <p data-key="agile-desc">Fluent in the native tongues of fashion’s dual capitals—Paris and Milan. Bridging the gap between corporate technology strategy, complex supply chain operations across the Italian tanneries, and the artistic direction of the historic Maisons. Her natural aptitude for other languages and accents such as, Portughese and dentals, make her unifying CTO in Latin America, Spain, and other countries including Turkey, Russia, and Japan.  </p>
+                <p data-key="agile-desc">Fluent in the native tongues of fashion’s dual capitals—Paris and Milan. Bridging the gap between corporate technology strategy, complex supply chain operations across the Italian tanneries, and the artistic direction of the historic Maisons. Her natural aptitude for other languages and accents such as, Portuguese and dentals, make her a unifying CTO in Latin America, Spain, and other countries including Turkey, Russia, and Japan.</p>
             </div>
         </div>
     </section>
-
-    <!-- Curated Lookbook Grid Section -->
-    <section class="section" id="lookbook">
-        <h2 class="section-title" data-key="lookbook-title">Curated Lookbook</h2>
-        <div class="visual-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-        <p> coming soon! </p>
-        </div>
-    </section>
-
+    
     <section class="section" id="frameworks">
         <h2 class="section-title" data-key="frameworks-title">Technological Frameworks for Luxury</h2>
         <div class="grid">
@@ -162,28 +180,113 @@
         </div>
     </section>
 
+    <!-- Cryptography Meet Fashion Leadership Services Section -->
+    <section class="section" id="cryptography-leadership">
+        <h2 class="section-title" data-key="crypto-title">Cryptography Meet Fashion Leadership Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3 data-key="cto-title">Chief Technology Officer, Technologist</h3>
+                <ul data-key="cto-list">
+                    <li>Strategic digital architecture.</li>
+                    <li>Technical team leadership.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 data-key="enhanced-title">Enhanced Creative Workflows</h3>
+                <ul data-key="enhanced-list">
+                    <li>Workflow optimization through tech.</li>
+                    <li>Data-driven trend forecasting.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
     <section class="cta-section">
         <h2 data-key="cta-title">Uniting Heritage with Digital Defensibility</h2>
         <p data-key="cta-desc">Available for strategic technical leadership, board advisory, and elite CTO positions within European luxury houses and abroad.</p>
         <a href="mailto:samira@cryptologiallc.com" class="btn" data-key="cta-btn">Iniziamo un Dialogo</a>
     </section>
 
+
+
+    <!-- Intellect Meets Fashion Leadership Services Section -->
+    <section class="section" id="intellect-leadership">
+        <h2 class="section-title" data-key="intellect-title">Intellect Meets Fashion Leadership Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3 data-key="editorial-title">Creative Director & Editorial Needs</h3>
+                <ul data-key="editorial-list">
+                    <li>Unified creative strategy.</li>
+                    <li>Thematic editorial development.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 data-key="modeling-title">Modeling</h3>
+                <ul data-key="modeling-list">
+                    <li>Runway & editorial presence.</li>
+                    <li>Model representation.</li>
+                    <li><a href="/modeling.html" data-key="view-portfolio">View Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Curated Lookbook Grid Section -->
+    <section class="section" id="lookbook">
+        <h2 class="section-title" data-key="lookbook-title">Curated Lookbook Editorials</h2>
+        <div class="lookbook-grid">
+            <div class="lookbook-item">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/art/turkey_vogue.png" alt="Turkey Vogue Editorial">
+            </div>
+            <div class="lookbook-item">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/art/brazil_allure.png" alt="Allure Brazil Editorial">
+            </div>
+            <div class="lookbook-item">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/art/harper_japan.png" alt="Harper's Bazaar Japan Editorial">
+            </div>
+            <div class="lookbook-item">
+                <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/art/ruskaya_vogue.png" alt="Ruskaya Vogue Editorial">
+            </div>
+        </div>
+    </section>
+    
+    <div class="lookbook-item">
+        <img src="https://raw.githubusercontent.com/samiracolivamadrigal/samiracolivamadrigal.github.io/master/gallery/art/allure_it.png" alt="Allure Italia Editorial"
+            style="
+                    display: flex;
+                    justify-content: center;
+                    margin: 0 auto;
+                    max-width: 50%;
+                    height: auto;
+                "
+            >
+    </div>
+
+    <footer>
+        <hr>
+        <p>Copyright &copy; <span data-key="copyright-year">2024</span> Samira & Cryptologia, LLC</p>
+    </footer>
+
+
     <!-- Native Poetic Translation Engine Script -->
     <script>
     const translations = {
         en: {
-            "hero-title": "Securing the Future of <span>Haute Couture</span> through Advanced Cryptology.",
+            "nav-modeling": "MODELING",
+            "nav-home": "HOME",
+            "hero-title-a": "Securing the Future of <span>Haute Couture</span> through Advanced Cryptology, and ",
+            "hero-title-b": "Samira's Maison & Atelier.",
             "hero-desc": "Bridging the meticulous technical precision of mathematical defense with the visionary heritage of luxury fashion houses.",
             "hero-btn": "Explore the Vision",
             "bg-title": "Background",
             "bg-subtitle": "About Mademoiselle Samira & Crypto",
-            "bg-desc": "In addition to being naturally drawn to mathematics and qubits, Samira always fostered a passion for foreign languages, fashion design, and haute couture. With an unparalleled vision, sophisticated aesthetic, and deep appreciation for the craft, her work goes beyond serving the technologist needs that intersect luxury houses and bleeding tech--she provides an unparalleled aesthetic to the fashion and beauty industry that surpassed fashion consultancy. Cryptologia, LLC addresses all technological needs, including chief technology officer for fashion houses, taking into account the richness and creative direction of the fashion industry. Under her own name, Samira serves fashion consultancy needs and is a candidate for elite modeling.",
+            "bg-desc": "In addition to being naturally drawn to mathematics and qubits, Samira always fostered a passion for foreign languages, fashion design, and haute couture. With an unparalleled vision, sophisticated aesthetic, and deep appreciation for the craft, her work goes beyond serving the technologist needs that intersect luxury houses and bleeding tech--she provides an unparalleled aesthetic to the fashion and beauty industry that surpasses fashion consultancy. Cryptologia, LLC addresses all technological needs, including chief technology officer for fashion houses, taking into account the richness and creative direction of the fashion industry. Under her own name, Samira serves fashion consultancy needs and is a candidate for elite modeling.",
             "philosophy-title": "The Philosophy: Structure & Audacity",
             "smoke-title": "Le Smoking Électronique",
             "smoke-desc": "Just as Yves Saint Laurent broke conventions in 1966 by introducing architectural, empowering structure to womenswear, modern luxury demands a bold restructuring of its digital architecture. True luxury cannot exist without total privacy, absolute data ownership, and pristine origin verification.",
             "agile-title": "Linguistic & Cultural Agility",
-            "agile-desc": "Fluent in the native tongues of fashion’s dual capitals—Paris and Milan. Bridging the gap between corporate technology strategy, complex supply chain operations across the Italian tanneries, and the artistic direction of the historic Maisons.",
-            "lookbook-title": "Curated Lookbook",
+            "agile-desc": "Fluent in the native tongues of fashion’s dual capitals—Paris and Milan. Bridging the gap between corporate technology strategy, complex supply chain operations across the Italian tanneries, and the artistic direction of the historic Maisons. Her natural aptitude for other languages and accents such as, Portuguese and dentals, make her a unifying CTO in Latin America, Spain, and other countries including Turkey, Russia, and Japan.",
             "frameworks-title": "Technological Frameworks for Luxury",
             "framework1-title": "Anti-Counterfeiting & Provenance",
             "framework1-desc": "Implementing cryptographic, zero-knowledge proofs and mathematical authentication layers to trace luxury goods from the initial textile weave to secondary market ownership without compromising client anonymity.",
@@ -191,23 +294,38 @@
             "framework2-desc": "Designing secure environments for AI-assisted design generation and trend forecasting, protecting the Maison's proprietary archival datasets from public model leaks.",
             "framework3-title": "Next-Gen Luxury Architecture",
             "framework3-desc": "Preparing digital e-commerce empires and luxury client-relations databases for the quantum era with agile, future-proof frameworks.",
+            "crypto-title": "Cryptography Meet Fashion Leadership Services",
+            "cto-title": "Chief Technology Officer, Technologist",
+            "cto-list": "<li>Strategic digital architecture.</li><li>Technical team leadership.</li>",
+            "enhanced-title": "Enhanced Creative Workflows",
+            "enhanced-list": "<li>Workflow optimization through tech.</li><li>Data-driven trend forecasting.</li>",
+            "intellect-title": "Intellect Meets Fashion Leadership Services",
+            "editorial-title": "Creative Director & Editorial Needs",
+            "editorial-list": "<li>Unified creative strategy.</li><li>Thematic editorial development.</li>",
+            "modeling-title": "Modeling",
+            "modeling-list": "<li>Runway & editorial presence.</li><li>Model representation.</li><li><a href='/modeling.html' data-key='view-portfolio'>View Portfolio</a></li>",
+            "view-portfolio": "View Portfolio",
+            "lookbook-title": "Curated Lookbook Editorials",
             "cta-title": "Uniting Heritage with Digital Defensibility",
             "cta-desc": "Available for strategic technical leadership, board advisory, and elite CTO positions within European luxury houses and abroad.",
-            "cta-btn": "Iniziamo un Dialogo"
+            "cta-btn": "Iniziamo un Dialogo",
+            "copyright-year": "2024"
         },
         fr: {
-            "hero-title": "Sécuriser l'Avenir de la <span>Haute Couture</span> grâce à la Cryptologie Avancée.",
-            "hero-desc": "Associer la précision technique méticuleuse de la défense mathématique à l'héritage visionnaire des maisons de mode de luxe.",
+            "nav-modeling": "MANNEQUINAT",
+            "nav-home": "ACCUEIL",
+            "hero-title-a": "Sécuriser l'Avenir de la <span>Haute Couture</span> grâce à la Cryptologie Avancée, et ",
+            "hero-title-b": "la Maison & l'Atelier de Samira.",
+            "hero-desc": "Faire le pont entre la précision technique méticuleuse de la défense mathématique et l'héritage visionnaire des maisons de mode de luxe.",
             "hero-btn": "Explorer la Vision",
-            "bg-title": "Parcours",
+            "bg-title": "Contexte",
             "bg-subtitle": "À propos de Mademoiselle Samira & Crypto",
-            "bg-desc": "En plus d'être naturellement attirée par les mathématiques et les qubits, Samira a toujours nourri une passion pour les langues étrangères, le design de mode et la haute couture. Forte d'une vision unique, d'une esthétique sophistiquée et d'une profonde appréciation du savoir-faire, son travail va bien au-delà de la simple satisfaction des besoins techniques à l'intersection des maisons de luxe et des technologies de pointe—elle apporte à l'industrie de la mode et de la beauté une esthétique inégalée qui dépasse le conseil en mode. Cryptologia, LLC répond à tous les besoins technologiques, y compris le rôle de directrice de la technologie (CTO) pour les maisons de mode, en tenant compte de la richesse et de la direction créative de l'industrie. Sous son propre nom, Samira répond aux besoins de conseil en mode et se présente comme candidate pour le mannequinat d'élite.",
+            "bg-desc": "En plus d'être naturellement attirée par les mathématiques et les qubits, Samira a toujours nourri une passion pour les langues étrangères, le design de mode et la haute couture. Forte d'une vision unique, d'une esthétique sophistiquée et d'une profonde appréciation de l'artisanat, son travail va au-delà de la satisfaction des besoins technologiques à l'intersection des maisons de luxe et des technologies de pointe—elle apporte une esthétique inégalée à l'industrie de la mode et de la beauté qui dépasse le conseil en mode. Cryptologia, LLC répond à tous les besoins technologiques, y compris le poste de directrice de la technologie pour les maisons de mode, en tenant compte de la richesse et de la direction créative de l'industrie de la mode. Sous son propre nom, Samira répond aux besoins de conseil en mode et se présente comme candidate pour le mannequinat d'élite.",
             "philosophy-title": "La Philosophie: Structure & Audace",
             "smoke-title": "Le Smoking Électronique",
             "smoke-desc": "Tout comme Yves Saint Laurent a bousculé les conventions en 1966 en introduisant une structure architecturale et émancipatrice dans le vestiaire féminin, le luxe moderne exige une restructuration audacieuse de son architecture numérique. Le vrai luxe ne peut exister sans une confidentialité totale, une propriété absolue des données et une vérification d'origine impeccable.",
             "agile-title": "Agilité Linguistique & Culturelle",
-            "agile-desc": "Maîtrisant parfaitement les langues maternelles des deux capitales de la mode — Paris et Milan. Faire le pont entre la stratégie technologique d'entreprise, les opérations complexes de la chaîne d'approvisionnement dans les tanneries italiennes et la direction artistique des Maisons historiques.",
-            "lookbook-title": "Lookbook Sélectionné",
+            "agile-desc": "Maîtrisant parfaitement les langues maternelles des deux capitales de la mode — Paris et Milan. Faire le pont entre la stratégie technologique d'entreprise, les opérations complexes de la chaîne d'approvisionnement dans les tanneries italiennes et la direction artistique des Maisons historiques. Son aptitude naturelle pour d'autres langues et accents comme le portugais et les dentales en fait une CTO unificatrice en Amérique Latine, en Espagne et dans d'autres pays, notamment la Turquie, la Russie et le Japon.",
             "frameworks-title": "Cadres Technologiques pour le Luxe",
             "framework1-title": "Anti-Contrefaçon & Provenance",
             "framework1-desc": "Mettre en œuvre des preuves cryptographiques à divulgation nulle de connaissance (ZKP) et des couches d'authentification mathématique pour suivre les produits de luxe, du tissage initial du textile jusqu'à la propriété sur le marché secondaire, sans compromettre l'anonymat des clients.",
@@ -215,23 +333,38 @@
             "framework2-desc": "Concevoir des environnements sécurisés pour la génération de designs assistée par l'IA et la prévision des tendances, protégeant ainsi les ensembles de données archivistiques exclusifs de la Maison contre les fuites de modèles publics.",
             "framework3-title": "Architecture de Luxe de Nouvelle Génération",
             "framework3-desc": "Préparer les empires du commerce électronique numérique et les bases de données de relations clients de luxe pour l'ère quantique grâce à des architectures agiles et évolutives.",
+            "crypto-title": "Services de Leadership Cryptographie et Mode",
+            "cto-title": "Directrice de la Technologie, Technologue",
+            "cto-list": "<li>Architecture numérique stratégique.</li><li>Leadership technique d'équipe.</li>",
+            "enhanced-title": "Flux de Travail Créatifs Améliorés",
+            "enhanced-list": "<li>Optimisation des flux de travail grâce à la technologie.</li><li>Prévision des tendances basée sur les données.</li>",
+            "intellect-title": "Services de Leadership Intellect et Mode",
+            "editorial-title": "Directrice Artistique & Besoins Éditoriaux",
+            "editorial-list": "<li>Stratégie créative unifiée.</li><li>Développement éditorial thématique.</li>",
+            "modeling-title": "Mannequinat",
+            "modeling-list": "<li>Présence sur les podiums et dans les éditoriaux.</li><li>Représentation de mannequins.</li><li><a href='/modeling.html' data-key='view-portfolio'>Voir le Portfolio</a></li>",
+            "view-portfolio": "Voir le Portfolio",
+            "lookbook-title": "Éditoriaux du Lookbook Sélectionné",
             "cta-title": "Unir l'Héritage à la Défendabilité Numérique",
-            "cta-desc": "Disponible pour des postes de direction technique stratégique, de conseil d'administration et de direction technologique d'élite au sein des maisons de luxe européennes.",
-            "cta-btn": "Iniziamo un Dialogo"
+            "cta-desc": "Disponible pour le leadership technique stratégique, le conseil d'administration et les postes de CTO d'élite au sein des maisons de luxe européennes et à l'étranger.",
+            "cta-btn": "Iniziamo un Dialogo",
+            "copyright-year": "2024"
         },
         it: {
-            "hero-title": "Mettere in Sicurezza il Futuro dell'<span>Haute Couture</span> attraverso la Criptologia Avanzata.",
-            "hero-desc": "Unire la meticolosa precisione tecnica della difesa matematica con l'eredità visionaria delle case di moda di lusso.",
+            "nav-modeling": "MODELING",
+            "nav-home": "HOME",
+            "hero-title-a": "Mettere in Sicurezza il Futuro dell'<span>Haute Couture</span> attraverso la Criptologia Avanzata, e ",
+            "hero-title-b": "la Maison & l'Atelier di Samira.",
+            "hero-desc": "Colmare il divario tra la meticolosa precisione tecnica della difesa matematica e l'eredità visionaria delle storiche case di moda.",
             "hero-btn": "Esplora la Visione",
-            "bg-title": "Esperienza",
+            "bg-title": "Contesto",
             "bg-subtitle": "Informazioni su Mademoiselle Samira & Crypto",
             "bg-desc": "Oltre ad essere naturalmente attratta dalla matematica e dai qubit, Samira ha sempre coltivato una passione per le lingue straniere, il fashion design e l'alta moda. Con una visione senza pari, un'estetica sofisticata e un profondo rispetto per l'artigianato, il suo lavoro va oltre il soddisfare le necessità tecnologiche che intersecano le case di lusso e la tecnologia d'avanguardia: offre un'estetica impareggiabile all'industria della moda e della bellezza che supera la consulenza di moda. Cryptologia, LLC risponde a tutte le esigenze tecnologiche, incluso il ruolo di chief technology officer per le case di moda, tenendo conto della ricchezza e della direzione creativa del settore. Con il proprio nome, Samira si occupa di consulenza di moda ed è candidata per il modellismo d'élite.",
             "philosophy-title": "La Filosofia: Struttura & Audacia",
             "smoke-title": "Le Smoking Électronique",
             "smoke-desc": "Proprio come Yves Saint Laurent ruppe le convenzioni nel 1966 introducendo una struttura architettonica ed emancipatrice nell'abbigliamento femminile, il lusso moderno richiede una audace ristrutturazione della sua architettura digitale. Il vero lusso non può esistere senza una totale privacy, la proprietà assoluta dei dati e una perfetta verifica dell'origine.",
             "agile-title": "Agilità Linguistica & Culturale",
-            "agile-desc": "Fluente nelle lingue madri delle due capitali della moda: Parigi e Milano. Colmare il divario tra la strategia tecnologica aziendale, le complesse operazioni della filiera produttiva attraverso le concerie italiane e la direzione artistica delle storiche Maison.",
-            "lookbook-title": "Lookbook Curato",
+            "agile-desc": "Fluente nelle lingue madri delle due capitali della moda: Parigi e Milano. Colmare il divario tra la strategia tecnologica aziendale, le complesse operazioni della filiera produttiva attraverso le concerie italiane e la direzione artistica delle storiche Maison. La sua naturale attitudine per altre lingue e accenti come il portoghese e le dentali la rendono una CTO unificante in America Latina, Spagna e altri paesi tra cui Turchia, Russia e Giappone.",
             "frameworks-title": "Framework Tecnologici per il Lusso",
             "framework1-title": "Anti-Contraffazione & Provenienza",
             "framework1-desc": "Implementazione di prove crittografiche a conoscenza zero (ZKP) e livelli di autenticazione matematica per tracciare i beni di lusso dalla trama del tessuto iniziale fino alla proprietà del mercato secondario, senza compromettere l'anonimato del cliente.",
@@ -239,9 +372,22 @@
             "framework2-desc": "Progettare ambienti sicuri per la generazione di design assistita da intelligenza artificiale e la previsione delle tendenze, proteggendo i set di dati archivistici proprietari della Maison da fughe di modelli pubblici.",
             "framework3-title": "Architettura del Lusso di Prossima Generazione",
             "framework3-desc": "Preparare gli imperi dell'e-commerce digitale e i database delle relazioni con i clienti di lusso per l'era quantistica con framework agili e a prova di futuro.",
+            "crypto-title": "Servizi di Leadership Crittografia e Moda",
+            "cto-title": "Chief Technology Officer, Tecnologo",
+            "cto-list": "<li>Architettura digitale strategica.</li><li>Leadership tecnica del team.</li>",
+            "enhanced-title": "Workflow Creativi Migliorati",
+            "enhanced-list": "<li>Ottimizzazione del flusso di lavoro attraverso la tecnologia.</li><li>Previsione delle tendenze basata sui dati.</li>",
+            "intellect-title": "Servizi di Leadership Intelletto e Moda",
+            "editorial-title": "Direttore Creativo & Esigenze Editoriali",
+            "editorial-list": "<li>Strategia creativa unificata.</li><li>Sviluppo editoriale tematico.</li>",
+            "modeling-title": "Modeling",
+            "modeling-list": "<li>Presenza in passerella e negli editoriali.</li><li>Rappresentanza di modelli.</li><li><a href='/modeling.html' data-key='view-portfolio'>Visualizza Portfolio</a></li>",
+            "view-portfolio": "Visualizza Portfolio",
+            "lookbook-title": "Editoriali del Lookbook Curato",
             "cta-title": "Unire il Patrimonio con la Difendibilità Digitale",
-            "cta-desc": "Disponibile per leadership tecnica strategica, consulenza aziendale e ruoli d'élite come CTO all'interno delle case di lusso europee.",
-            "cta-btn": "Iniziamo un Dialogo"
+            "cta-desc": "Disponibile per leadership tecnica strategica, consulenza aziendale e ruoli d'élite come CTO all'interno delle case di lusso europee e all'estero.",
+            "cta-btn": "Iniziamo un Dialogo",
+            "copyright-year": "2024"
         }
     };
 
@@ -249,8 +395,7 @@
         document.querySelectorAll('[data-key]').forEach(element => {
             const key = element.getAttribute('data-key');
             if (translations[lang] && translations[lang][key]) {
-                // If it contains span tags (like the hero title), render as HTML, otherwise use textContent
-                if (translations[lang][key].includes('<span>')) {
+                if (translations[lang][key].includes('<span>') || translations[lang][key].includes('<li>') || translations[lang][key].includes('<a href=')) {
                     element.innerHTML = translations[lang][key];
                 } else {
                     element.textContent = translations[lang][key];
