@@ -225,6 +225,72 @@
       font-size: 0.7rem;
     }
   }
+    /* --- Natural Feature --- */
+.natural-feature-container {
+  max-width: 900px;
+  margin: 3.5rem auto 1rem auto;
+  padding: 0 1rem;
+}
+
+.natural-image-card {
+  background: var(--card-bg, #141416);
+  border: 1px solid var(--border, rgba(212, 175, 55, 0.25));
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.4s ease, transform 0.4s ease;
+}
+
+.natural-image-card:hover {
+  border-color: rgba(212, 175, 55, 0.55);
+  transform: translateY(-2px);
+}
+
+.natural-image-wrapper {
+  width: 100%;
+  max-height: 650px;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.natural-image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.natural-image-card:hover .natural-image-wrapper img {
+  transform: scale(1.015);
+}
+
+.natural-caption {
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.natural-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .natural-caption {
+    padding: 1.25rem 1rem;
+  }
+  .natural-title {
+    font-size: 1.7rem;
+  }
+}
 </style>
 
 <!-- YouTube Iframe API Controller -->
@@ -647,6 +713,22 @@
         </div>
 
     </div>
+
+    <!-- Summer Feature: Natural -->
+<div class="natural-feature-container">
+  <div class="natural-image-card">
+    <div class="natural-image-wrapper">
+      <img 
+        src="./gallery/modeling/joie.png" 
+        alt="Samira Carolina — Natural"
+      >
+    </div>
+    <div class="natural-caption">
+      <h3 class="natural-title">Natural</h3>
+    </div>
+  </div>
+</div>
+    
 
     <!-- Booking Section -->
     <section class="booking-section">
