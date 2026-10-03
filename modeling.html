@@ -84,7 +84,213 @@
     </style>
 </head>
 <body>
+<!-- Floating Corner Audio Player -->
+<div id="music-pill" class="music-pill-container" title="Toggle Soundtrack">
+  <div class="sound-wave">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <div class="track-details">
+    <span class="track-title">JONY — Френдзона</span>
+    <span id="track-status" class="track-status">Click to Play</span>
+  </div>
+  <button id="audio-toggle-btn" class="audio-btn" aria-label="Play/Pause Audio">
+    <svg id="play-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+    <svg id="pause-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:none;">
+      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+    </svg>
+  </button>
+</div>
 
+<!-- Hidden YouTube Embed for Seamless Looping Audio -->
+<div style="position: absolute; width: 1px; height: 1px; opacity: 0.01; overflow: hidden; pointer-events: none;">
+  <div id="yt-audio-player"></div>
+</div>
+
+<style>
+  /* Floating Top-Right Corner Music Pill */
+  .music-pill-container {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(20, 20, 22, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 40px;
+    padding: 0.45rem 0.9rem 0.45rem 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+
+  .music-pill-container:hover {
+    border-color: rgba(212, 175, 55, 0.7);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Animated Sound Waves */
+  .sound-wave {
+    display: flex;
+    align-items: flex-end;
+    gap: 2.5px;
+    height: 14px;
+    width: 14px;
+  }
+
+  .sound-wave .bar {
+    width: 2.5px;
+    height: 3px;
+    background: #d4af37;
+    border-radius: 1px;
+    transition: height 0.2s ease;
+  }
+
+  /* Animated wave when active */
+  .music-pill-container.playing .sound-wave .bar:nth-child(1) {
+    animation: bounceBar 1.2s infinite ease-in-out;
+  }
+  .music-pill-container.playing .sound-wave .bar:nth-child(2) {
+    animation: bounceBar 0.9s infinite ease-in-out 0.2s;
+  }
+  .music-pill-container.playing .sound-wave .bar:nth-child(3) {
+    animation: bounceBar 1.4s infinite ease-in-out 0.4s;
+  }
+  .music-pill-container.playing .sound-wave .bar:nth-child(4) {
+    animation: bounceBar 1.0s infinite ease-in-out 0.1s;
+  }
+
+  @keyframes bounceBar {
+    0%, 100% { height: 3px; }
+    50% { height: 14px; }
+  }
+
+  .track-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.15;
+  }
+
+  .track-title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #f0f0f0;
+    letter-spacing: 0.04em;
+  }
+
+  .track-status {
+    font-size: 0.65rem;
+    color: #9e9ea7;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .audio-btn {
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    padding: 0;
+  }
+
+  .audio-btn:hover {
+    background: rgba(212, 175, 55, 0.35);
+  }
+
+  @media (max-width: 600px) {
+    .music-pill-container {
+      top: 1rem;
+      right: 1rem;
+      padding: 0.35rem 0.75rem;
+    }
+    .track-title {
+      font-size: 0.7rem;
+    }
+  }
+</style>
+
+<!-- YouTube Iframe API Controller -->
+<script>
+  // Load YouTube Iframe API asynchronously
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  var isPlaying = false;
+  var videoId = 'uXn8sNpPt04'; // JONY - Френдзона
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('yt-audio-player', {
+      videoId: videoId,
+      playerVars: {
+        'autoplay': 0,
+        'controls': 0,
+        'loop': 1,
+        'playlist': videoId, // Required by YT API to enable endless loop
+        'playsinline': 1
+      },
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+  function onPlayerStateChange(event) {
+    var container = document.getElementById('music-pill');
+    var statusText = document.getElementById('track-status');
+    var playIcon = document.getElementById('play-icon');
+    var pauseIcon = document.getElementById('pause-icon');
+
+    // YT.PlayerState.PLAYING = 1, PAUSED = 2, ENDED = 0
+    if (event.data === YT.PlayerState.PLAYING) {
+      isPlaying = true;
+      container.classList.add('playing');
+      statusText.textContent = 'Playing';
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
+    } else {
+      isPlaying = false;
+      container.classList.remove('playing');
+      statusText.textContent = 'Paused';
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+    }
+
+    // Safety fallback for looping
+    if (event.data === YT.PlayerState.ENDED) {
+      player.playVideo();
+    }
+  }
+
+  document.getElementById('music-pill').addEventListener('click', function() {
+    if (!player || typeof player.playVideo !== 'function') return;
+    if (isPlaying) {
+      player.pauseVideo();
+    } else {
+      player.playVideo();
+    }
+  });
+</script>
     <header>
         <div class="logo"><a href="index.html">Samira Carolina Oliva Madrigal</a></div>
         <div class="nav-links">
