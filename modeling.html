@@ -173,6 +173,264 @@
 
         </div>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modeling Portfolio — Samira Carolina Oliva Madrigal</title>
+  
+  <!-- External Google Fonts work both locally and on GitHub Pages -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0d0d0e;
+      --card-bg: #141416;
+      --accent: #d4af37;
+      --text: #e6e6e6;
+      --text-muted: #9e9ea7;
+      --border: rgba(212, 175, 55, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 0 1.5rem 4rem 1.5rem;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .editorial-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .editorial-subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .modeling-pillars {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .pillar-item {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .pillar-item:hover {
+      color: var(--accent);
+    }
+
+    .pillar-divider {
+      color: var(--border);
+      font-size: 0.9rem;
+    }
+
+    .featured-visage-container {
+      max-width: 900px;
+      margin: 3.5rem auto;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3rem;
+      align-items: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.5rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .visage-image-wrapper {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 2px;
+    }
+
+    .visage-image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .visage-image-wrapper:hover img {
+      transform: scale(1.02);
+    }
+
+    .visage-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .visage-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .visage-details h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .visage-details p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.2rem;
+    }
+
+    .spec-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    .spec-value {
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
+      .featured-visage-container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 2rem;
+      }
+      .editorial-title {
+        font-size: 2.1rem;
+      }
+      .modeling-pillars {
+        gap: 1.2rem;
+      }
+      .pillar-divider {
+        display: none;
+      }
+      .pillar-item {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="editorial-title">Samira Carolina</h1>
+    <div class="editorial-subtitle">Editorial & Haute Couture Portfolio</div>
+    
+    <nav class="modeling-pillars" aria-label="Editorial Categories">
+      <a href="#editorials" class="pillar-item">Sartorial Editorials</a>
+      <span class="pillar-divider">♦</span>
+      <a href="#visage" class="pillar-item">Visage</a>
+      <span class="pillar-divider">♦</span>
+      <a href="#muse" class="pillar-item">Muse Modeling</a>
+    </nav>
+  </header>
+
+  <section id="visage">
+    <div class="featured-visage-container">
+      <div class="visage-image-wrapper">
+        <!-- Local path resolves cleanly both locally and in production -->
+        <img 
+          src="./gallery/modeling/samira_visage.png" 
+          alt="Samira Carolina — Visage Portrait"
+          loading="eager"
+        >
+      </div>
+      
+      <div class="visage-details">
+        <span class="visage-badge">Signature Visage</span>
+        <h2>High Fashion & Studio Portraiture</h2>
+        <p>
+          Focused on editorial expression, clean architectural lines, and haute couture styling. Bringing strong symmetry, poise, and artistic vision to creative visual narratives.
+        </p>
+
+        <div class="specs-grid">
+          <div>
+            <div class="spec-label">Focus</div>
+            <div class="spec-value">Editorial / Fine Art</div>
+          </div>
+          <div>
+            <div class="spec-label">Discipline</div>
+            <div class="spec-value">Runway & Studio</div>
+          </div>
+          <div>
+            <div class="spec-label">Representation</div>
+            <div class="spec-value">Direct / Boutique</div>
+          </div>
+          <div>
+            <div class="spec-label">Location</div>
+            <div class="spec-value">California, USA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+        
+
         <!-- Editorial Placeholder Blocks -->
         <h2 style="font-family: var(--font-serif); font-weight: 300; font-size: 1.8rem; margin-bottom: 1.5rem; letter-spacing: 1px;">Editorial Lookbook</h2>
         <div class="visual-grid">
