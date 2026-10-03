@@ -225,7 +225,7 @@
       font-size: 0.7rem;
     }
   }
-    /* --- Natural Feature --- */
+/* --- Natural Feature (Full Body Display) --- */
 .natural-feature-container {
   max-width: 900px;
   margin: 3.5rem auto 1rem auto;
@@ -248,8 +248,7 @@
 
 .natural-image-wrapper {
   width: 100%;
-  max-height: 650px;
-  overflow: hidden;
+  /* Removed max-height so the full vertical length shows */
   background: #000;
   display: flex;
   align-items: center;
@@ -259,13 +258,13 @@
 .natural-image-wrapper img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  /* Displays the entire photo without cropping any part of the body */
   display: block;
   transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .natural-image-card:hover .natural-image-wrapper img {
-  transform: scale(1.015);
+  transform: scale(1.01);
 }
 
 .natural-caption {
