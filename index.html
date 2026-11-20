@@ -56,26 +56,30 @@
         </style>
     </head>
     <body>
-    
-            <br/><br/>
-            <div align="center">
-            <hr >
-            |&nbsp; <a href="/olivamadrigal.pdf"/>R&eacute;sum&eacute;</a>
-            |&nbsp; <a href="https://www.linkedin.com/in/samiracolivamadrigal/?locale=en_US"/>LinkedIn</a>
-            |&nbsp; <a href="https://github.com/olivamadrigal"/>GitHub </a> 
-            |&nbsp; <a href="/notes.pdf"/>Cryptography &amp; Network Security Notes</a>
-            |&nbsp; <a href="/dja.pdf"/>Deutsch-Josza Algorithm</a> 
-            <!-- |&nbsp; <a href="https://leetcode.com/olivamadrigal/"/>LeetCode</a> -->
-            |&nbsp; <a href="https://orcid.org/0000-0002-3654-2536">ORCiD</a>
-            |&nbsp; <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=zYJmXYQAAAAJ">Google Scholar</a>
-            |&nbsp; <a href="/media.html">Official Media</a>
-            |&nbsp; <a href="https://lnk.bio/samiracarolinaolivamadrigal">lnk.bio</a>
-            |&nbsp; <a href="https://samiracolivamadrigal.github.io/atelier.html">Maison & Atelier</a> &nbsp;| 
-            <!-- play link -->
-| <a href="#play" id="nav-audio-toggle" role="button" aria-pressed="false" style="cursor:pointer;">Play</a>
 
-<!-- Place once anywhere before </body> -->
-<div id="yt-ambient-player" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden;"></div>
+<!-- Centered Top Ambient Audio Button -->
+<div id="ambient-audio-widget" style="position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:9999;">
+  <button id="ambient-play-btn" aria-label="Toggle Le Temps De L'amour" style="
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 16px;
+    background:rgba(17,17,17,0.88);
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:999px;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    font-size:12px;letter-spacing:0.06em;text-transform:uppercase;
+    cursor:pointer;transition:all 0.2s ease;
+    box-shadow:0 4px 16px rgba(0,0,0,0.12);
+  "
+  onmouseover="this.style.background='#000';this.style.borderColor='#fff';"
+  onmouseout="this.style.background='rgba(17,17,17,0.88)';this.style.borderColor='rgba(255,255,255,0.2)';">
+    <span id="ambient-icon">▶</span>
+    <span id="ambient-label">Le Temps De L'amour</span>
+  </button>
+  <div id="yt-ambient-player" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none;"></div>
+</div>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
@@ -90,25 +94,53 @@
       events: {
         onStateChange: function (e) {
           isPlaying = (e.data === YT.PlayerState.PLAYING);
-          const link = document.getElementById('nav-audio-toggle');
-          link.textContent = isPlaying ? 'Pause' : 'Play';
-          link.setAttribute('aria-pressed', String(isPlaying));
+          document.getElementById('ambient-icon').textContent = isPlaying ? '❚❚' : '▶';
+          document.getElementById('ambient-label').textContent = isPlaying ? 'Pause' : "Le Temps De L'amour";
         }
       }
     });
   }
 
-  document.getElementById('nav-audio-toggle').addEventListener('click', function (e) {
-    e.preventDefault();
+  document.getElementById('ambient-play-btn').addEventListener('click', function () {
     if (!ambientPlayer || !ambientPlayer.playVideo) return;
     isPlaying ? ambientPlayer.pauseVideo() : ambientPlayer.playVideo();
   });
 </script>
-&nbsp;|       
+        
+            <br/><br/>
+            <div align="center">
+            <hr >
+            |&nbsp; <a href="/olivamadrigal.pdf"/>R&eacute;sum&eacute;</a>
+            |&nbsp; <a href="https://www.linkedin.com/in/samiracolivamadrigal/?locale=en_US"/>LinkedIn</a>
+            |&nbsp; <a href="https://github.com/olivamadrigal"/>GitHub </a> 
+            |&nbsp; <a href="/notes.pdf"/>Cryptography &amp; Network Security Notes</a>
+            |&nbsp; <a href="/dja.pdf"/>Deutsch-Josza Algorithm</a> 
+            <!-- |&nbsp; <a href="https://leetcode.com/olivamadrigal/"/>LeetCode</a> -->
+            |&nbsp; <a href="https://orcid.org/0000-0002-3654-2536">ORCiD</a>
+            |&nbsp; <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=zYJmXYQAAAAJ">Google Scholar</a>
+            |&nbsp; <a href="/media.html">Official Media</a>
+            |&nbsp; <a href="https://lnk.bio/samiracarolinaolivamadrigal">lnk.bio</a>
+            |&nbsp; <a href="https://samiracolivamadrigal.github.io/atelier.html">Maison & Atelier</a> &nbsp;|      
 
             <hr />
             <br />
             </div>
+<!-- Centered Preprint Link -->
+<div style="text-align:center;margin:24px 0;">
+  <a href="https://eprint.iacr.org/" target="_blank" rel="noopener noreferrer" style="
+    display:inline-block;
+    font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    font-size:14px;
+    line-height:1.5;
+    color:inherit;
+    text-decoration:underline;
+    text-underline-offset:4px;
+  ">
+    SAMIRA: Scalable Approximate Matrix Inference over Ring-native Arithmetic
+  </a>
+</div>
+
+        
             <div class="content" align="center">
             <blockquote>
             <img src="samira2025.jpeg" class="w3-square" alt="samira" style="width:100px">  
