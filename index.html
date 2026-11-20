@@ -125,18 +125,23 @@
             <hr />
             <br />
             </div>
-<!-- Centered Preprint Link -->
-<div style="text-align:center;margin:24px 0;">
+<!-- Centered Preprint Link with Semi-Transparent Pink Highlight Bar -->
+<div style="text-align:center;margin:20px auto 16px;">
   <a href="https://eprint.iacr.org/" target="_blank" rel="noopener noreferrer" style="
     display:inline-block;
+    padding:4px 14px;
+    background:rgba(255,105,180,0.22);
+    border-radius:4px;
     font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
     font-size:14px;
     line-height:1.5;
-    color:inherit;
-    text-decoration:underline;
-    text-underline-offset:4px;
-  ">
-    SAMIRA: Scalable Approximate Matrix Inference over Ring-native Arithmetic
+    color:#2b2b2b;
+    text-decoration:none;
+    transition:background 0.2s ease, color 0.2s ease;
+  "
+  onmouseover="this.style.background='rgba(255,105,180,0.36)';this.style.color='#111';"
+  onmouseout="this.style.background='rgba(255,105,180,0.22)';this.style.color='#2b2b2b';">
+    SAMIR Protocol: Scalable Approximate Matrix Inference over Ring-native Arithmetic
   </a>
 </div>
 
