@@ -112,9 +112,100 @@
             .hero-text p { margin: 0 auto 2rem auto; }
             .lang-tags { flex-wrap: wrap; justify-content: center; }
         }
+
+        .atelier-music-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 0.9rem;
+}
+
+.atelier-music-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+.atelier-music-links a {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.1rem;
+}
+
+.atelier-music-links a:hover {
+  opacity: 0.75;
+}
+
+.atelier-music-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.atelier-music-btn:hover {
+  opacity: 0.8;
+}
+
+.atelier-player-drawer {
+  flex-basis: 100%;
+  margin-top: 0.25rem;
+}
+
+.atelier-embed-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+}
+
+.atelier-embed-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+.atelier-fallback-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+}
     </style>
 </head>
 <body>
+
+<div class="atelier-music-bar" role="group" aria-label="Curated music and track player">
+  <nav class="atelier-music-links" aria-label="Curated music profiles">
+    <a href="https://music.apple.com/profile/voirtuvoir" target="_blank" rel="noopener noreferrer">Apple Music</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://www.last.fm/user/voirtuvoir" target="_blank" rel="noopener noreferrer">Last.fm</a>
+  </nav>
+
+  <button
+    type="button"
+    id="stereo-love-btn"
+    class="atelier-music-btn"
+    data-yt-url="https://www.youtube.com/watch?v=X2q-HtLho74"
+    aria-pressed="false"
+  >
+    <span class="atelier-btn-icon" aria-hidden="true">▶</span>
+    <span class="atelier-btn-label">Play: LEONIDAS — STEREO LOVE</span>
+  </button>
+
+  <div id="stereo-love-player" class="atelier-player-drawer" hidden></div>
+</div>
+    
 
     <header>
         <div class="logo">Samira Carolina Oliva Madrigal & Cryptologia, LLC</div>
