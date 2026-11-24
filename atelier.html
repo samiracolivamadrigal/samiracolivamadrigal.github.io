@@ -112,51 +112,150 @@
             .hero-text p { margin: 0 auto 2rem auto; }
             .lang-tags { flex-wrap: wrap; justify-content: center; }
         }
+.atelier-hero {
+  background-color: #0b0b0c;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 96px 96px;
+  color: #f4f2ee;
+  padding: 4.5rem 2rem;
+}
 
-        .atelier-music-bar {
+.atelier-hero-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.atelier-music-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem 1.25rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 2rem;
 }
 
 .atelier-music-links {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
+  gap: 0.65rem;
+  font-size: 1.05rem;
+  color: #e4b69a;
 }
 
 .atelier-music-links a {
+  color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid currentColor;
+  border-bottom: 1px solid rgba(228, 182, 154, 0.45);
   padding-bottom: 0.1rem;
 }
 
 .atelier-music-links a:hover {
-  opacity: 0.75;
+  border-bottom-color: currentColor;
 }
 
 .atelier-music-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.45rem 0.9rem;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: 0.85rem;
+  padding: 0.42rem 0.9rem;
+  border: 1px solid rgba(244, 242, 238, 0.35);
+  background: rgba(255, 255, 255, 0.02);
+  color: #f4f2ee;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
 .atelier-music-btn:hover {
-  opacity: 0.8;
+  border-color: #e4b69a;
 }
 
+.atelier-player-drawer {
+  flex-basis: 100%;
+  margin-top: 0.5rem;
+}
+
+.atelier-embed-wrap {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+}
+
+.atelier-embed-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.atelier-fallback-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #e4b69a;
+}
+
+.atelier-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(2.1rem, 4.2vw, 3.65rem);
+  line-height: 1.18;
+  text-align: center;
+  margin: 0 0 2.5rem;
+}
+
+.accent-gold {
+  color: #dfb468;
+}
+
+.accent-blush {
+  color: #e4b69a;
+}
+
+.atelier-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.atelier-cta-left {
+  max-width: 440px;
+}
+
+.atelier-subtitle {
+  color: #a7a5a2;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0 0 1.75rem;
+}
+
+.atelier-vision-btn {
+  display: inline-block;
+  padding: 0.85rem 1.65rem;
+  border: 1px solid rgba(244, 242, 238, 0.45);
+  color: #f4f2ee;
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.atelier-vision-btn:hover {
+  border-color: #dfb468;
+  color: #dfb468;
+}
+
+/* ~3x larger circular portrait (e.g. 96px -> 288px) */
+.atelier-portrait {
+  width: 288px;
+  height: 288px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
 .atelier-player-drawer {
   flex-basis: 100%;
   margin-top: 0.25rem;
@@ -184,28 +283,52 @@
     </style>
 </head>
 <body>
+<section class="atelier-hero">
+  <div class="atelier-hero-inner">
+    <div class="atelier-music-bar" role="group" aria-label="Curated music and track player">
+      <nav class="atelier-music-links" aria-label="Curated music profiles">
+        <a href="https://www.last.fm/user/voirtuvoir" target="_blank" rel="noopener noreferrer">last.fm</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://music.apple.com/profile/voirtuvoir" target="_blank" rel="noopener noreferrer">curated music lists</a>
+      </nav>
 
-<div class="atelier-music-bar" role="group" aria-label="Curated music and track player">
-  <nav class="atelier-music-links" aria-label="Curated music profiles">
-    <a href="https://music.apple.com/profile/voirtuvoir" target="_blank" rel="noopener noreferrer">Apple Music</a>
-    <span aria-hidden="true">·</span>
-    <a href="https://www.last.fm/user/voirtuvoir" target="_blank" rel="noopener noreferrer">Last.fm</a>
-  </nav>
+      <button
+        type="button"
+        id="stereo-love-btn"
+        class="atelier-music-btn"
+        aria-pressed="false"
+      >
+        <span class="atelier-btn-icon" aria-hidden="true">▶</span>
+        <span class="atelier-btn-label">STEREO LOVE</span>
+      </button>
 
-  <button
-    type="button"
-    id="stereo-love-btn"
-    class="atelier-music-btn"
-    data-yt-url="https://www.youtube.com/watch?v=X2q-HtLho74"
-    aria-pressed="false"
-  >
-    <span class="atelier-btn-icon" aria-hidden="true">▶</span>
-    <span class="atelier-btn-label">Play: LEONIDAS — STEREO LOVE</span>
-  </button>
+      <div id="stereo-love-player" class="atelier-player-drawer" hidden></div>
+    </div>
 
-  <div id="stereo-love-player" class="atelier-player-drawer" hidden></div>
-</div>
-    
+    <h1 class="atelier-title">
+      Securing the Future of <span class="accent-gold">Haute Couture</span><br />
+      through Advanced Cryptology. Expanding beauty<br />
+      through <span class="accent-blush">Samira's Maison &amp; Atelier.</span>
+    </h1>
+
+    <div class="atelier-cta-row">
+      <div class="atelier-cta-left">
+        <p class="atelier-subtitle">
+          Bridging the meticulous technical precision of mathematical defense with the visionary heritage of luxury fashion houses.
+        </p>
+        <a href="#vision" class="atelier-vision-btn">EXPLORE THE VISION</a>
+      </div>
+
+      <div class="atelier-portrait-wrap">
+        <img
+          src="me.png"
+          alt="Samira Oliva Madrigal portrait"
+          class="atelier-portrait"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
     <header>
         <div class="logo">Samira Carolina Oliva Madrigal & Cryptologia, LLC</div>
@@ -505,5 +628,51 @@
         });
     }
     </script>
+    <script>
+  (function () {
+    const btn = document.getElementById("stereo-love-btn");
+    const label = btn.querySelector(".atelier-btn-label");
+    const icon = btn.querySelector(".atelier-btn-icon");
+    const drawer = document.getElementById("stereo-love-player");
+    const videoId = "X2q-HtLho74";
+    const watchUrl = "https://www.youtube.com/watch?v=" + videoId;
+
+    btn.addEventListener("click", function () {
+      const isOpen = !drawer.hidden;
+
+      if (isOpen) {
+        drawer.innerHTML = "";
+        drawer.hidden = true;
+        btn.setAttribute("aria-pressed", "false");
+        icon.textContent = "▶";
+        label.textContent = "STEREO LOVE";
+        return;
+      }
+
+      if (window.location.protocol === "file:") {
+        window.open(watchUrl, "_blank", "noopener,noreferrer");
+        return;
+      }
+
+      drawer.innerHTML = `
+        <div class="atelier-embed-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+            title="LEONIDAS - STEREO LOVE"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <a class="atelier-fallback-link" href="${watchUrl}" target="_blank" rel="noopener noreferrer">
+          Open on YouTube if playback is restricted
+        </a>
+      `;
+      drawer.hidden = false;
+      btn.setAttribute("aria-pressed", "true");
+      icon.textContent = "■";
+      label.textContent = "STOP STEREO LOVE";
+    });
+  })();
+</script>
 </body>
 </html>
